@@ -14,3 +14,16 @@ class ResourceRequirements(BaseModel):
     gpu: str
     ram: str
     storage: str
+
+class TaskRequest(BaseModel):
+    """
+    Request schema for executing a task in a Docker container.
+
+    Attributes:
+        task_type (str): The type of task to execute (e.g., "execute_code").
+        code (str): The code to be executed in the container
+        resources (ResourceRequirements): An object specifying the resource limits for the container.
+    """
+    task_type: str
+    code: str
+    resources: ResourceRequirements
