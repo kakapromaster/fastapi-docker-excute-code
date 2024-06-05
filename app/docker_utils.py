@@ -4,6 +4,22 @@ import concurrent.futures
 from app.schemas import TaskRequest
 
 async def execute_code_in_docker(task_request: TaskRequest) -> str:
+    """
+    Executes the provided Python code in a Docker container.
+
+    Args:
+        task_request (TaskRequest): An object containing the code to execute and resource constraints.
+                                    The TaskRequest schema should include:
+                                    - code: The Python code to be executed as a string.
+                                    - resources: An object specifying the resource limits for the container.
+                                      - cpu (str): CPU quota in units of 1e-9 CPUs.
+                                      - gpu (str): Number of GPUs to allocate for the container (e.g., "1" for one GPU, "0" if no GPU is needed).
+                                      - ram (str): Maximum RAM limit for the container (e.g., "512MB").
+                                      - storage (str): Storage limit for the container (e.g., "1GB").
+
+    Returns:
+        str: The output of the executed code from the Docker container logs.
+    """
     # Initialize Docker client
     client = docker.DockerClient(base_url='tcp://localhost:2375')
     
