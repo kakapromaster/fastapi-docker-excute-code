@@ -27,3 +27,12 @@ class TaskRequest(BaseModel):
     task_type: str
     code: str
     resources: ResourceRequirements
+
+class TaskResponse(BaseModel):
+    """
+    Response schema for the output of a Docker container task execution.
+
+    Attributes:
+        output (str): The output of the executed code from the Docker container logs.
+    """
+    output: str
