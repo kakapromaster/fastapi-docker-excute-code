@@ -160,3 +160,8 @@ This FastAPI application provides a service to execute code inside a Docker cont
 - `main.py`: Contains the FastAPI application and endpoint definitions.
 - `docker_utils.py`: Contains the utility functions for executing code inside Docker containers.
 - `schemas.py`: Defines the request and response schemas used for data validation.
+
+## Suggested enhancements
+
+1. **Support for More Languages**: Extend the `task_type` to support more programming languages like Javascript and Java.
+2. **Enhanced Security**: Use the `sanitize-py` library to sanitize input code, ensuring that potentially malicious code is safely handled and cannot harm the host system.
