@@ -142,3 +142,21 @@ This FastAPI application provides a service to execute code inside a Docker cont
 3. **Install Dependencies**: The required packages are installed using `pip`.
 4. **Docker Installation**: Docker needs to be installed and running on your machine to create and manage containers.
 5. **Start the FastAPI Server**: The application is started using Uvicorn, making the API accessible locally.
+
+## Project Structure
+
+```plaintext
+.
+├── app
+│   ├── main.py
+│   ├── schemas.py
+│   └── docker_utils.py
+├── requirements.txt
+├── README.md
+```
+
+## Main application files
+
+- `main.py`: Contains the FastAPI application and endpoint definitions.
+- `docker_utils.py`: Contains the utility functions for executing code inside Docker containers.
+- `schemas.py`: Defines the request and response schemas used for data validation.
